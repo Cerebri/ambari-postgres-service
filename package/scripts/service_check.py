@@ -23,7 +23,7 @@ class ServiceCheck(Script):
     def service_check(self, env):
         import params
         env.set_params(params)
-        cmdfile=format("/tmp/cmds")
+        cmdfile=format("/tmp/postgres_smoketest")
         File(cmdfile,
              mode=0600,
              content=InlineTemplate("CREATE DATABASE smoketest WITH OWNER postgres;\n"

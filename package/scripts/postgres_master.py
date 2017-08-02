@@ -11,6 +11,8 @@ class PostgresServer(PostgresBase):
         print "Initializing Postgress DB"
         init_cmd = format("service postgresql-9.6 initdb")
         Execute(init_cmd)
+        print "Configuring DRUID and SUPERSET databases"
+        self.configure_databases(env)
         self.configure_postgres(env)
 
     def configure(self, env):
